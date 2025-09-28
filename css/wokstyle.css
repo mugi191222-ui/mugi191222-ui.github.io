@@ -1,0 +1,153 @@
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background: #111;
+  color: #FFF;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* リンク色*/
+a {
+    color: #FFF;
+}
+
+/* 文字大きさ*/
+.chibi {
+  font-size: 0.8em;
+
+}
+
+/* レイアウト */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+}
+
+/* 左：プロフィール */
+.profile {
+  padding: 20px 40px;
+  border-right: 1px solid #333;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 0px);
+  overflow-y: auto;
+}
+
+/* 中央：作品リスト */
+.works {
+  padding: 20px 40px;
+  max-height: 100vh; 
+  overflow-y: auto;  
+  /* スクロールバー非表示 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.works ul {
+  list-style: none;
+  padding: 0;
+}
+.works li {
+  display: flex;           /* 横並び */
+  align-items: center;     /* 垂直方向を中央揃え */
+  gap: 10px;               /* 「カテゴリ」とタイトルの間のスペース */
+  margin-bottom: 20px;
+}
+
+.work-type {
+  min-width: 80px;         /* 横幅を揃えたい場合 */
+  white-space: nowrap;     /* 改行しない */
+}
+
+.works a {
+  color: #fff;
+  transition: color .3s;
+}
+.works a:hover {
+  text-decoration: none;
+}
+
+.works::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+
+/* 中央：作品のプレビューサイズ */
+
+.web {
+	margin: 0 auto;
+	text-align: center;
+}
+.web img {
+	width: 80%;	
+}
+
+img.a4 {
+    width: 50%;
+}
+
+/* 右：プレビュー */
+.preview {
+  padding: 20px 40px;
+  border-left: 1px solid #333;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 0px);
+  overflow-y: auto;
+}
+.preview img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+.preview p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* スマホ対応 */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    height: auto;      /* 高さ自動にしてスクロール全体 */
+  }
+  .preview {
+    display: none;     /* プレビュー非表示 */
+  }
+  .profile {
+    height: auto;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #333;
+    overflow: visible;
+  }
+  .works {
+    max-height: none;
+    overflow-y: visible;
+  }
+	
+.web img {
+	width: 100%;	
+
+}
+	
+img.a4 {
+    width: 100%;
+}
+	
+	
+}
